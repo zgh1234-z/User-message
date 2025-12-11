@@ -3,21 +3,22 @@ const text = prompt("متن پیام را وارد کنید ");
 
 let M = [];
 
+function* Id(n) {
+  let id = 1;
+  while (true) {
+    yield i++;
+  }
+}
+
 function message(Name, Text, Time) {
   this.Name = Name;
   this.Text = Text;
-  const Time = new Date();
 }
 
 const NewText = new message(Username, text);
-const Newid = new Id(id);
+const Newid = Id(id);
+const Time = new message(Date);
 M.push(NewText);
-M.posh(Newid);
+M.push(Newid);
 
-function* Id(n) {
-  let id = 1;
-  while (i <= n) {
-    yield i++;
-  }
-  return id;
-}
+consol.log(M);
