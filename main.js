@@ -1,5 +1,10 @@
-const Username = prompt("نام کاربر ");
-const text = prompt("متن پیام را وارد کنید ");
+let i = 1;
+while (i != 10) {
+  const Username = prompt("نام کاربر ");
+  const text = prompt("متن پیام را وارد کنید ");
+  break;
+  i++;
+}
 
 let M = [];
 let S = JSON.stringify(M);
@@ -27,5 +32,3 @@ console.log(regex.test(text));
 console.log(text.replace(regex, "#"));
 M.push(NewText);
 M.push(Newid);
-
-console.log(P);
