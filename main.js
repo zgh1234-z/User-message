@@ -1,24 +1,31 @@
-const Username = Symbol(prompt("نام کاربر "));
+const Username = prompt("نام کاربر ");
 const text = prompt("متن پیام را وارد کنید ");
 
 let M = [];
+let S = JSON.stringify(M);
+let P = JSON.parse(S);
 
-function* Id(n) {
-  let id = 1;
+function* Id() {
+  let i = 1;
   while (true) {
     yield i++;
   }
 }
 
-function message(Name, Text, Time) {
+function Message(Name, Text, Time) {
   this.Name = Name;
   this.Text = Text;
+  this.Time = Time;
 }
 
-const NewText = new message(Username, text);
-const Newid = Id(id);
-const Time = new message(Date);
+const NewText = new Message(Username, text, new Date());
+const generator = Id();
+const Newid = generator.next().value;
+
+let regex = /بد/gi;
+console.log(regex.test(text));
+console.log(text.replace(regex, "#"));
 M.push(NewText);
 M.push(Newid);
 
-consol.log(M);
+console.log(P);
